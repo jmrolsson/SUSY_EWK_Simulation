@@ -8,19 +8,20 @@ import re
 # Run local or on the grid
 runlocal = False
 
-# Resubmit jobs (with new tag) that refuse to work
+# Resubmit failed jobs (with new tag)
 resubmit = False
 # resubmitRuns = set([37, 39, 40])
 resubmitRuns = set([])
 
 import datetime
 today = datetime.datetime.today()
-tag = today.strftime('%Y%m%d')+'_10k_alpha1'
-# tag = '20161201_10k_alpha1'
+tag = today.strftime('%Y%m%d')+'_30k_1'
+# tag = '20161201_10k_1'
 user = 'jolsson'
 mctag = 'mc15_13TeV'
 
-nJobs = 10
+# 30k events per point
+nJobs = 30
 nEventsPerJob  = 1000
 
 maxCpuCount = 252000 # 70 hrs
@@ -53,9 +54,10 @@ elif IOError:
 massgrid_WZ = massgrid
 massgrid_Wh = massgrid
 decaytypes = ['WZ', 'Wh']
-finalstates = ['bbqq', 'bblv']
-filters_bbqq = ['1L4andJ10']
-filters_bblv = ['1L4andJ10']
+# finalstates = ['bbqq', 'bblv']
+finalstates = ['bbqq']
+filters_bbqq = ['J10']
+# filters_bblv = ['1L4andJ10']
 
 # >>----------------------------------------------------------------------------
 
