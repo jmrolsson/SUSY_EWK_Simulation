@@ -107,7 +107,7 @@ for i,jobConfig in enumerate(jobConfigs):
             +' --firstEvent=%SKIPEVENTS --maxEvents='+str(nEventsPerJob) \
             +' --randomSeed=%RNDM:'+str(randSeed)+' --jobConfig='+jobConfig \
             +' --outputEVNTFile=%OUT.'+outputfile+'" --outDS user.'+user+'.'+mctag+'.' \
-            +re.search('(?<=MC15\.).*(?=\.py)', jobConfig).group()+'.EVNT.'+tag+' >& '+logfile+' &'
+            +re.search('(?<=MC15\.).*(?=\.py)', jobConfig).group()+'.EVNT.'+tag #+' >& '+logfile+' &'
 
     # print 'outDS: user.'+user+'.'+mctag+'.'+re.search('(?<=MC15\.).*(?=\.py)', jobConfig).group()+'.EVNT.'+tag+'_EXT0'
     print '\nlogfile: '+logfile
