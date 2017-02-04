@@ -7,7 +7,7 @@ All the necessary files for generating event (both locally and on the grid) are 
 ### Setup
 ```
 git clone https://github.com/jmrolsson/SUSY_EWK_Simulation
-cd EventGeneration
+cd SUSY_EWK_Simulation/EventGeneration
 setupATLAS
 lsetup panda
 asetup AtlasProduction,19.2.5.15
