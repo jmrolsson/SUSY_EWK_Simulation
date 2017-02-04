@@ -20,7 +20,9 @@ Generate_tf.py --ecmEnergy=13000 --runNumber=000001 --maxEvents=1000 --jobConfig
 ```
 
 ### Submitting jobs to the GRID
+```
 python submit_Generate_tf_MG_C1N2_WZ_Wh.py  
+```
 
 ## Going from EVNT to TRUTH xAODs
 
@@ -33,4 +35,6 @@ Reco_tf.py --inputEVNTFile test1.000001.EVNT.root --outputDAODFile test1.000001.
 ```
 
 ### Submitting jobs to the GRID
+```
 python submit_Reco_tf_TRUTH.py
+```
