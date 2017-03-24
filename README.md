@@ -110,7 +110,7 @@ Reco_tf.py --inputAODFile ../Test/test.000001.AOD.root --outputDAODFile ../Test/
 ```
 
 ### Submitting jobs to the GRID
-Modify the file 'python submit_Reco_derivation_tf.py' to specify what AOD files you are running over, name of your output datasets, etc... then run:
+Modify the file 'python submit_Reco_tf_derivation.py' to specify what AOD files you are running over, name of your output datasets, etc... then run:
 ```
-python submit_Reco_derivation_tf.py
+python submit_Reco_tf_derivation.py
 ```
