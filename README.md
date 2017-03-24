@@ -86,7 +86,7 @@ asetup AtlasDerivation,20.7.5.1,here
 ### Testing locally
 Example:
 ```
-Reco_tf.py --inputHITSFile ../Test/test1.000001.HITS.root --outputAODFile ../Test/test1.000001.AOD.root
+Reco_tf.py --inputHITSFile ../Test/test.000001.HITS.root --outputAODFile ../Test/test.000001.AOD.root
 ```
 
 ### Submitting jobs to the GRID
