@@ -75,7 +75,7 @@ Modify the file 'python submit_Sim_tf.py' to specify what EVNT files you are run
 python submit_Sim_tf.py
 ```
 
-## Runing reconstruction (Going from HITS to AOD)
+## Running reconstruction (Going from HITS to AOD)
 
 ### Setup
 ```
