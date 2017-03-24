@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!-- Edited By POOL -->
+<!DOCTYPE POOLFILECATALOG SYSTEM "InMemory">
+<POOLFILECATALOG>
+  <File ID="D4BB99F1-28BB-F342-B036-0E8A2483838A">
+    <physical>
+      <pfn filetype="ROOT_All" name="../../../Reco/test1.000001.AOD.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+  <File ID="D39BFF7D-54D1-6B4D-B4F0-E8025F415715">
+    <physical>
+      <pfn filetype="ROOT_All" name="DAOD_SUSY10.test1_SUSY10.pool.root"/>
+    </physical>
+    <logical/>
+  </File>
+
+</POOLFILECATALOG>
