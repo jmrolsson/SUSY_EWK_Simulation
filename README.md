@@ -6,7 +6,7 @@ Scripts for running ATLAS Monte Carlo simulation jobs, locally and on the grid (
 git clone https://github.com/jmrolsson/SUSY_EWK_Simulation
 setupATLAS
 lsetup panda
-mkdir Test
+mkdir SUSY_EWK_Simulation/Test
 ```
 
 ## Generating events (creating EVNT files)
@@ -75,7 +75,7 @@ Modify the file 'python submit_Sim_tf.py' to specify what EVNT files you are run
 python submit_Sim_tf.py
 ```
 
-## Detector reconstruction: Going from HITS to AOD
+## Runing reconstruction (Going from HITS to AOD)
 
 ### Setup
 ```
@@ -95,7 +95,7 @@ Modify the file 'python submit_Reco_tf.py' to specify what HITS files you are ru
 python submit_Reco_tf.py
 ```
 
-## Physics derivation: Going from AOD to DxAOD
+## Creating the physics derivation (Going from AOD to DxAOD)
 
 ### Setup
 ```
