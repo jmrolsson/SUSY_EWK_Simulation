@@ -16,7 +16,6 @@ resubmitRuns = set([])
 import datetime
 today = datetime.datetime.today()
 tag = today.strftime('%Y%m%d')+'_30k_1'
-# tag = '20161201_10k_1'
 user = 'jolsson'
 mctag = 'mc15_13TeV'
 
@@ -27,13 +26,15 @@ nEventsPerJob  = 1000
 maxCpuCount = 252000 # 70 hrs
 randSeed = 12749816
 
-startRunNumber = 1
+startRunNumber = 23
 ecm = 13000
 
 datasetName = 'MGPy8EG_A14N23LO_C1N2'
 # Example: MC15.399100.MGPy8EG_A14N23LO_C1N2_WZ_500p0_0p5_bbqq_noFilter.py
 
-massgrid_file = 'mass_grid.txt'
+#massgrid_file = 'mass_grid_extra_Wh_May5.txt'
+#massgrid_file = 'mass_grid_extra_Wh_May13.txt'
+massgrid_file = 'mass_grid_extra_WZ_May15.txt'
 massgrid = []
 if os.path.exists(massgrid_file):
     with open(massgrid_file) as f:
@@ -53,7 +54,9 @@ elif IOError:
 
 massgrid_WZ = massgrid
 massgrid_Wh = massgrid
-decaytypes = ['WZ', 'Wh']
+#decaytypes = ['WZ', 'Wh']
+#decaytypes = ['Wh']
+decaytypes = ['WZ']
 # finalstates = ['bbqq', 'bblv']
 finalstates = ['bbqq']
 filters_bbqq = ['J10']
