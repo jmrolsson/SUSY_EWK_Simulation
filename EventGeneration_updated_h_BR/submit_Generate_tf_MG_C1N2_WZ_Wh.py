@@ -15,9 +15,9 @@ resubmitRuns = set([])
 
 import datetime
 today = datetime.datetime.today()
-tag = today.strftime('%Y%m%d')
+#tag = today.strftime('%Y%m%d')
 #tag = '20170726'
-tag = '20171107'
+tag = '20171107_hbb'
 user = 'jolsson'
 mctag = 'mc15_13TeV'
 
@@ -30,7 +30,8 @@ nEventsPerJob = 1000
 maxCpuCount = 252000 # 70 hrs
 randSeed = 12749816
 
-startRunNumber = 100001
+startRunNumber = 100014
+lastRunNumber = 100015
 ecm = 13000
 
 datasetName = 'MGPy8EG_A14N23LO_C1N2'
@@ -65,7 +66,8 @@ decaytypes = ['Wh']
 #decaytypes = ['WZ']
 # finalstates = ['bbqq', 'bblv']
 finalstates = ['bbqq']
-filters_bbqq = ['J10']
+filters_bbqq = []
+#filters_bbqq = ['J10']
 # filters_bblv = ['1L4andJ10']
 
 # >>----------------------------------------------------------------------------
@@ -96,6 +98,7 @@ for decaytype in decaytypes:
                 sp.call('echo "'+includeStr+'" > '+jobConfig, shell=True)
                 runNumbers.append('{:0>6d}'.format(runNumber))
                 runNumber += 1
+                if runNumber == lastRunNumber: break
 
 # Submit jobs to the grid
 for i,jobConfig in enumerate(jobConfigs):

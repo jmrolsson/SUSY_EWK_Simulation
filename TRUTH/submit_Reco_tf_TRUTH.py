@@ -13,7 +13,9 @@ import datetime
 #tag = today.strftime('%Y%m%d')+'_30k_1'
 #tag = '20170506_2.1'
 #tag = '20170514_1.1'
-tag = '20170516_1.1'
+#tag = '20170516_1.1'
+#tag = '20170816_validation'
+tag = '20171101_validation'
 user = 'jolsson'
 
 doBuild = True
@@ -78,17 +80,35 @@ doBuildAll = False
 #         'user.jolsson.mc15_13TeV.000021.MGPy8EG_A14N23LO_C1N2_Wh_450p0_50p0_bbqq_J10.EVNT.20170514_30k_1_EXT0',
 #         'user.jolsson.mc15_13TeV.000022.MGPy8EG_A14N23LO_C1N2_Wh_450p0_150p0_bbqq_J10.EVNT.20170514_30k_1_EXT0']
 
-inDSs = ['user.jolsson.mc15_13TeV.000023.MGPy8EG_A14N23LO_C1N2_WZ_1000p0_0p0_bbqq_J10.EVNT.20170516_30k_1_EXT0',
-         'user.jolsson.mc15_13TeV.000024.MGPy8EG_A14N23LO_C1N2_WZ_800p0_200p0_bbqq_J10.EVNT.20170516_30k_1_EXT0',
-         'user.jolsson.mc15_13TeV.000025.MGPy8EG_A14N23LO_C1N2_WZ_800p0_0p0_bbqq_J10.EVNT.20170516_30k_1_EXT0',
-         'user.jolsson.mc15_13TeV.000026.MGPy8EG_A14N23LO_C1N2_WZ_600p0_0p0_bbqq_J10.EVNT.20170516_30k_1_EXT0']
+#inDSs = ['user.jolsson.mc15_13TeV.000023.MGPy8EG_A14N23LO_C1N2_WZ_1000p0_0p0_bbqq_J10.EVNT.20170516_30k_1_EXT0',
+#         'user.jolsson.mc15_13TeV.000024.MGPy8EG_A14N23LO_C1N2_WZ_800p0_200p0_bbqq_J10.EVNT.20170516_30k_1_EXT0',
+#         'user.jolsson.mc15_13TeV.000025.MGPy8EG_A14N23LO_C1N2_WZ_800p0_0p0_bbqq_J10.EVNT.20170516_30k_1_EXT0',
+#         'user.jolsson.mc15_13TeV.000026.MGPy8EG_A14N23LO_C1N2_WZ_600p0_0p0_bbqq_J10.EVNT.20170516_30k_1_EXT0']
+
+#inDSs = ['user.jolsson.mc15_13TeV.394329.MGPy8EG_A14N23LO_C1N2_Wh_hbb_350p0_0p0_had.EVNT.20170816_validation_EXT0',
+#         'user.jolsson.mc15_13TeV.394331.MGPy8EG_A14N23LO_C1N2_Wh_hbb_400p0_0p0_had.EVNT.20170816_validation_EXT0',
+#         #'user.jolsson.mc15_13TeV.394338.MGPy8EG_A14N23LO_C1N2_Wh_hbb_500p0_0p0_had.EVNT.20170816_validation_EXT0',
+#         'user.jolsson.mc15_13TeV.394348.MGPy8EG_A14N23LO_C1N2_Wh_hbb_600p0_0p0_had.EVNT.20170816_validation_EXT0']
+
+
+#inDSs = ['mc15_13TeV.394329.MGPy8EG_A14N23LO_C1N2_Wh_hbb_350p0_0p0_had.evgen.EVNT.e6234',
+#         'mc15_13TeV.394350.MGPy8EG_A14N23LO_C1N2_Wh_hbb_600p0_100p0_had.evgen.EVNT.e6234',
+#         'user.jolsson.mc15_13TeV.100004.MGPy8EG_A14N23LO_C1N2_Wh_350p0_0p0_bbqq_J10.EVNT.20170726_EXT0',
+#         'user.jolsson.mc15_13TeV.100026.MGPy8EG_A14N23LO_C1N2_Wh_600p0_100p0_bbqq_J10.EVNT.20170726_EXT0']
+
+#inDSs = ['mc15_13TeV.394338.MGPy8EG_A14N23LO_C1N2_Wh_hbb_500p0_0p0_had.evgen.EVNT.e6234',
+#         'user.jolsson.mc15_13TeV.100014.MGPy8EG_A14N23LO_C1N2_Wh_500p0_0p0_bbqq_J10.EVNT.20170726_EXT0']
+
+inDSs = ['user.jolsson.mc15_13TeV.100014.MGPy8EG_A14N23LO_C1N2_Wh_500p0_0p0_bbqq.EVNT.20171107_hbb100_EXT0']
 
 # >>---------------------------------------------------------------------------
 
 outDSs = []
 for inDS in inDSs:
     outDS = 'user.'+user+'.'
-    outDS += re.search('(?<=user\.jolsson\.).*(?=\.EVNT\.)',inDS).group()
+    inDS = re.sub('user\.jolsson\.', '', inDS)
+    inDS = re.sub('evgen\.', '', inDS)
+    outDS += re.search('.*(?=\.EVNT\.)',inDS).group()
     outDS += '.TRUTH1.'+tag
     outDSs.append(outDS)
 
@@ -113,4 +133,4 @@ for i,inDS in enumerate(inDSs):
     else:
         command = comLater.format(setup, outDS, inDS, config)
     print command
-    sp.call(command, shell=True)
+    #sp.call(command, shell=True)
